@@ -24,7 +24,7 @@ for i in md:
     meta.append(i.text)
 print(pag.status_code)
 print(pag.url)
-df = pd.DataFrame({'Title':titulos, 'Url':enlace}, index=list(range(1, len(titulos)+1)))
+df = pd.DataFrame({'Title':titulos, 'Url':enlace, 'Description':meta}, index=list(range(1, len(titulos)+1)))
 #df = pd.DataFrame({'meta':meta}, index=list(range(1, len(meta)+1)))
 with pd.ExcelWriter('scraping serp '+kw+'.xlsx') as writer:
     df.to_excel(writer)
